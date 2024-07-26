@@ -14,7 +14,7 @@ if exist !CONFIG_PATH! (
 		)  
 	)
 ) else (
-    ECHO 配置文件文件不存在,注册表未被删除
+    ECHO "!CONFIG_PATH!"配置文件文件不存在,注册表未被删除
 )
 
 for /f "skip=2 tokens=1,2* delims=," %%i in ('wmic path win32_printer get name /format:csv 2^>nul') do call :func %%j
