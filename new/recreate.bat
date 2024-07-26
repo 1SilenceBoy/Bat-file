@@ -13,8 +13,9 @@ echo *******************************Delete Printers Start***********************
 if exist !BAT_FILE! (  
 	call !BAT_FILE! 
 ) else (  
-	echo É¾³ýÅú´¦ÀíÎÄ¼þ²»´æÔÚ
-    pause>nul  
+	ECHO åˆ é™¤æ‰¹å¤„ç†æ–‡ä»¶ä¸å­˜åœ¨
+	pause>nul
+	exit  
 )  
 
 net stop spooler
@@ -22,27 +23,27 @@ net start spooler
 echo *******************************Delete Printers End*********************************
 echo *******************************Update Config Start*********************************
 
-::ÒÔÏÂÄÚÈÝÐèÒªÊÖ¶¯ÐÞ¸Ä
+::ä»¥ä¸‹å†…å®¹éœ€è¦æ‰‹åŠ¨ä¿®æ”¹
 
-::CUPS·þÎñÆ÷µÄIPµØÖ·
+::CUPSæœåŠ¡å™¨çš„IPåœ°å€
 set IP_ADDRESS=192.168.50.188
 
-::CUPS·þÎñÆ÷µÄ¶Ë¿ÚºÅ
+::CUPSæœåŠ¡å™¨çš„ç«¯å£å·
 set PORT=631
 
-::ÓÃ»§ÄÜÓÃµÄ´òÓ¡»úÃû³Æ ÓÃ»§Èç¹ûÖ»ÓÐÒ»¸ö´òÓ¡»úÄÜÓÃ£¬ÄÇ¾ÍÖ»Ð´PRINTER1¼´¿É,ÆäËûÒªÉ¾µô,Èç¹ûÓÐN¸ö´òÓ¡»ú£¬ÄÇ¾Í¼ÇÔØPRINTER1~PRINTERNµÄÊý¾Ý  Çë×¢Òâ£º´òÓ¡»úÃû×ÖÒ»¶¨Òª±£Ö¤ÕýÈ·£¬½áÎ²±£Ö¤²»Òª¶à³ö¿Õ¸ñ
-set PRINTER1=²âÊÔ´òÓ¡»ú
-set PRINTER2=ÊµÑéÊÒ´òÓ¡»ú
+::ç”¨æˆ·èƒ½ç”¨çš„æ‰“å°æœºåç§° ç”¨æˆ·å¦‚æžœåªæœ‰ä¸€ä¸ªæ‰“å°æœºèƒ½ç”¨ï¼Œé‚£å°±åªå†™PRINTER1å³å¯,å…¶ä»–è¦åˆ æŽ‰,å¦‚æžœæœ‰Nä¸ªæ‰“å°æœºï¼Œé‚£å°±è®°è½½PRINTER1~PRINTERNçš„æ•°æ®  è¯·æ³¨æ„ï¼šæ‰“å°æœºåå­—ä¸€å®šè¦ä¿è¯æ­£ç¡®ï¼Œç»“å°¾ä¿è¯ä¸è¦å¤šå‡ºç©ºæ ¼
+set PRINTER1=æµ‹è¯•æ‰“å°æœº
+set PRINTER2=å®žéªŒå®¤æ‰“å°æœº
 set PRINTER3=TestPrinter
-set PRINTER4=Printer¡ªOKAY
-set PRINTER5=³¬¹ó´òÓ¡»ú
+set PRINTER4=Printerâ€”OKAY
+set PRINTER5=è¶…è´µæ‰“å°æœº
 
 if exist "%TARGET_FILE%" (  
     del "%TARGET_FILE%"
 )
 type nul >"%TARGET_FILE%"
 
-::À¨ºÅÀïµÄÊýÖµÒªºÍÇ°ÃæµÄ´òÓ¡»ú¸öÊý¶ÔÉÏ£¬Ç°ÃæPRINTERºóÃæµÄÊýµ½¼¸£¬À¨ºÅÀïµÄÊý¾ÍÒªµ½¼¸
+::æ‹¬å·é‡Œçš„æ•°å€¼è¦å’Œå‰é¢çš„æ‰“å°æœºä¸ªæ•°å¯¹ä¸Šï¼Œå‰é¢PRINTERåŽé¢çš„æ•°åˆ°å‡ ï¼Œæ‹¬å·é‡Œçš„æ•°å°±è¦åˆ°å‡ 
 FOR %%i IN (1 2 3 4 5) DO (
     set LINE=!PRINTER%%i!=http://%IP_ADDRESS%:%PORT%/printers/!PRINTER%%i!
     echo !LINE!>> "%TARGET_FILE%"
