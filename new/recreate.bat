@@ -10,8 +10,8 @@ mshta vbscript:createobject("shell.application").shellexecute("%~s0","goto :runa
 set TARGET_FILE=C:\PrintToCups\printInspect.conf
 set "BAT_FILE=C:\Program Files (x86)\CommonDriver\recreate\delete.bat"
 echo *******************************Delete Printers Start********************************
-if exist !BAT_FILE! (  
-	call !BAT_FILE! 
+if exist "!BAT_FILE!" (  
+	call "!BAT_FILE!" 
 ) else (  
 	ECHO 删除批处理文件不存在
 	pause>nul
