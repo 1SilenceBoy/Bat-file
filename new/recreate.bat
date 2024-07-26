@@ -9,11 +9,12 @@ mshta vbscript:createobject("shell.application").shellexecute("%~s0","goto :runa
 
 set TARGET_FILE=C:\PrintToCups\printInspect.conf
 set "BAT_FILE=C:\Program Files (x86)\CommonDriver\recreate\delete.bat"
+set "EXE_FILE=C:\Program Files (x86)\CommonDriver\recreate\AddMutilVirtualPrinter.exe"
 echo *******************************Delete Printers Start********************************
 if exist "!BAT_FILE!" (  
 	call "!BAT_FILE!" 
 ) else (  
-	ECHO 删除批处理文件不存在
+	ECHO "!BAT_FILE!"删除批处理文件不存在
 	pause>nul
 	exit  
 )  
@@ -33,10 +34,10 @@ set PORT=631
 
 ::用户能用的打印机名称 用户如果只有一个打印机能用，那就只写PRINTER1即可,其他要删掉,如果有N个打印机，那就记载PRINTER1~PRINTERN的数据  请注意：打印机名字一定要保证正确，结尾保证不要多出空格
 set PRINTER1=测试打印机
-set PRINTER2=实验室打印机
+set PRINTER2=实验室A4打印机
 set PRINTER3=TestPrinter
 set PRINTER4=Printer—OKAY
-set PRINTER5=超贵打印机
+set PRINTER5=实验室A3打印机
 
 if exist "%TARGET_FILE%" (  
     del "%TARGET_FILE%"
@@ -50,7 +51,12 @@ FOR %%i IN (1 2 3 4 5) DO (
 )
 echo *******************************Update Config End*********************************
 echo *******************************Create Printers Start********************************
-"C:\Program Files (x86)\CommonDriver\recreate\AddMutilVirtualPrinter.exe"
+if exist "!EXE_FILE!" (  
+	"!EXE_FILE!" 
+) else (  
+	ECHO "!EXE_FILE!"不存在,打印机生成失败
+	pause>nul  
+)
 echo *******************************Create Printers End*********************************
 ::pause>nul
 exit
