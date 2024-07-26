@@ -14,7 +14,7 @@ if exist !CONFIG_PATH! (
 		)  
 	)
 ) else (
-    echo 删除批处理文件不存在
+    echo 配置文件文件不存在
     pause>nul
 )
 
