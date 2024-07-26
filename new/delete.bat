@@ -3,7 +3,7 @@ setlocal enabledelayedexpansion
 
 set "CONFIG_PATH=C:\PrintToCups\printInspect.conf"
 if exist !CONFIG_PATH! (  
-    for /f "tokens=1 delims==" %%i in (!CONFIG_PATH%!) do ( 
+    for /f "tokens=1 delims==" %%i in (!CONFIG_PATH!) do ( 
 		set "registryKey=HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Print\Environments\Windows x64\Drivers\Version-3\%%i"  
 		reg query "!registryKey!" >nul 2>&1
 		if !errorlevel! equ 0 (  
