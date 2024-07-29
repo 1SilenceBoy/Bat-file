@@ -13,16 +13,16 @@ set "EXE_FILE=C:\Program Files (x86)\CommonDriver\recreate\AddMutilVirtualPrinte
 set JSF=EC_URI.JS
 echo *******************************Delete Printers Start********************************
 if exist "%TARGET_FILE%" (  
-    ECHO "%TARGET_FILE%"¥Ê‘⁄
+    ECHO "%TARGET_FILE%"Â≠òÂú®
 ) else ( 
-	ECHO "%TARGET_FILE%"≤ª¥Ê‘⁄
+	ECHO "%TARGET_FILE%"‰∏çÂ≠òÂú®
 	call :func
 	set /p result=<choice_result.txt
-	:: ∏˘æ›Ω·π˚÷¥––≤Ÿ◊˜  
+	:: Ê†πÊçÆÁªìÊûúÊâßË°åÊìç‰Ωú  
 	if /i "!result!"=="Y" (  
-		ECHO ºÃ–¯÷¥––...............  
+		ECHO ÁªßÁª≠ÊâßË°å...............  
 	) else (  
-		ECHO ”√ªß—°‘Ò¡À∑Ò
+		ECHO Áî®Êà∑ÈÄâÊã©‰∫ÜÂê¶
 		del temp.vbs  
 		del choice_result.txt
 		exit
@@ -33,17 +33,17 @@ if exist "%TARGET_FILE%" (
 
 
 if exist "!EXE_FILE!" (  
-	ECHO "!EXE_FILE!"¥Ê‘⁄
+	ECHO "!EXE_FILE!"Â≠òÂú®
 ) else (  
-	ECHO "!EXE_FILE!"≤ª¥Ê‘⁄,≤Ÿ◊˜÷–∂œ
+	ECHO "!EXE_FILE!"‰∏çÂ≠òÂú®,Êìç‰Ωú‰∏≠Êñ≠
 	pause>nul
 	exit	
 )
 if exist "!BAT_FILE!" (  
-	ECHO "!BAT_FILE!"¥Ê‘⁄,¥Ú”°ª˙…æ≥˝≤Ÿ◊˜ø™ º÷¥––
+	ECHO "!BAT_FILE!"Â≠òÂú®,ÊâìÂç∞Êú∫Âà†Èô§Êìç‰ΩúÂºÄÂßãÊâßË°å
 	call "!BAT_FILE!" 
 ) else (  
-	ECHO "!BAT_FILE!"…æ≥˝≈˙¥¶¿ÌŒƒº˛≤ª¥Ê‘⁄
+	ECHO "!BAT_FILE!"Âà†Èô§ÊâπÂ§ÑÁêÜÊñá‰ª∂‰∏çÂ≠òÂú®
 	pause>nul
 	exit  
 ) 
@@ -53,38 +53,38 @@ net start spooler
 echo *******************************Delete Printers End*********************************
 echo *******************************Update Config Start*********************************
 
-::“‘œ¬ƒ⁄»›–Ë“™ ÷∂Ø–ﬁ∏ƒ
+::‰ª•‰∏ãÂÜÖÂÆπÈúÄË¶ÅÊâãÂä®‰øÆÊîπ
 
-::CUPS∑˛ŒÒ∆˜µƒIPµÿ÷∑
+::CUPSÊúçÂä°Âô®ÁöÑIPÂú∞ÂùÄ
 set IP_ADDRESS=192.168.50.188
 
-::CUPS∑˛ŒÒ∆˜µƒ∂Àø⁄∫≈
+::CUPSÊúçÂä°Âô®ÁöÑÁ´ØÂè£Âè∑
 set PORT=631
 
-::”√ªßƒ‹”√¥Ú”°ª˙√˚≥∆£¨»Áπ˚”√ªß÷ª”–“ª∏ˆ¥Ú”°ª˙£¨ƒ«√¥÷ª–Ë“™ÃÓ–¥PRINTER1º¥ø…£¨…æ≥˝∆‰À˚µƒPRINTER2~5,»Áπ˚”–N∏ˆ¥Ú”°ª˙ø…“‘ π”√£¨ø…“‘◊∑º”µΩPRINTERN£¨≤¢ÃÓ–¥œ‡”¶µƒ ˝æ›
-::«Î◊¢“‚£∫¥Ú”°ª˙√˚◊÷“ª∂®“™»∑±£’˝»∑£¨≤ª“™‘⁄Ω·Œ≤∂‡≥ˆø’∏Ò
-set PRINTER1=≤‚ ‘¥Ú”°ª˙
-set PRINTER2= µ—È “A4¥Ú”°ª˙
+::Áî®Êà∑ËÉΩÁî®ÊâìÂç∞Êú∫ÂêçÁß∞ÔºåÂ¶ÇÊûúÁî®Êà∑Âè™Êúâ‰∏Ä‰∏™ÊâìÂç∞Êú∫ÔºåÈÇ£‰πàÂè™ÈúÄË¶ÅÂ°´ÂÜôPRINTER1Âç≥ÂèØÔºåÂà†Èô§ÂÖ∂‰ªñÁöÑPRINTER2~5,Â¶ÇÊûúÊúâN‰∏™ÊâìÂç∞Êú∫ÂèØ‰ª•‰ΩøÁî®ÔºåÂèØ‰ª•ËøΩÂä†Âà∞PRINTERNÔºåÂπ∂Â°´ÂÜôÁõ∏Â∫îÁöÑÊï∞ÊçÆ
+::ËØ∑Ê≥®ÊÑèÔºöÊâìÂç∞Êú∫ÂêçÂ≠ó‰∏ÄÂÆöË¶ÅÁ°Æ‰øùÊ≠£Á°ÆÔºå‰∏çË¶ÅÂú®ÁªìÂ∞æÂ§öÂá∫Á©∫Ê†º
+set PRINTER1=ÊµãËØïÊâìÂç∞Êú∫
+set PRINTER2=ÂÆûÈ™åÂÆ§A4ÊâìÂç∞Êú∫
 set PRINTER3=TestPrinter
 set PRINTER4=Printer_A4
-set PRINTER5= µ—È “A3¥Ú”°ª˙
+set PRINTER5=ÂÆûÈ™åÂÆ§A3ÊâìÂç∞Êú∫
 
 if exist "%TARGET_FILE%" (  
     del "%TARGET_FILE%"
 )
 type nul >"%TARGET_FILE%"
 echo WScript.echo(encodeURIComponent(WScript.Arguments(0)));>"%JSF%"
-::¿®∫≈ƒ⁄µƒ÷µ“™»∑±£∫Õ«∞√Ê¥Ú”°ª˙µƒ∏ˆ ˝œ‡Õ¨£¨«∞√ÊPRINTER∫Û√Êµƒ ˝µΩº∏£¨¿®∫≈ƒ⁄µƒ÷µæÕ“™¥”1~º∏
+::Êã¨Âè∑ÂÜÖÁöÑÂÄºË¶ÅÁ°Æ‰øùÂíåÂâçÈù¢ÊâìÂç∞Êú∫ÁöÑ‰∏™Êï∞Áõ∏ÂêåÔºåÂâçÈù¢PRINTERÂêéÈù¢ÁöÑÊï∞Âà∞Âá†ÔºåÊã¨Âè∑ÂÜÖÁöÑÂÄºÂ∞±Ë¶Å‰ªé1~Âá†
 if exist "%TARGET_FILE%" (  
     FOR %%i IN (1 2 3 4 5) DO (
 		set "PRINTER_NAME=!PRINTER%%i!"
-		for /f "delims=" %%i in ('cscript //nologo "%JSF%" "!PRINTER_NAME!"') do set ENCODED=%%i  
-		::echo URL±‡¬Î∫Ûµƒ÷µŒ™: !ENCODED!
+		for /f "delims=" %%i in ('cscript //nologo "%JSF%" "!PRINTER_NAME!"') do set ENCODED=%%i
+		::echo URLÁºñÁ†ÅÂêéÁöÑÂÄº‰∏∫: !ENCODED!
 		set LINE=!PRINTER%%i!=http://%IP_ADDRESS%:%PORT%/printers/!ENCODED!
 		echo !LINE!>> "%TARGET_FILE%"
 	)
 ) else (
-	ECHO "%TARGET_FILE%"¥¥Ω® ß∞‹
+	ECHO "%TARGET_FILE%"ÂàõÂª∫Â§±Ë¥•
 	del "%JSF%"
 	pause>nul
 	exit
@@ -103,7 +103,7 @@ if exist "%tempFile%" (
 )
 type nul >"%tempFile%"
 echo Set objShell = WScript.CreateObject("WScript.Shell")>> "%tempFile%"
-echo intChoice = objShell.Popup("≈‰÷√Œƒº˛≤ª¥Ê‘⁄,ºÃ–¯Ω´ª·…æ≥˝À˘”–«˝∂Øµƒ◊¢≤·±Ì°£«ÎŒ  «∑ÒºÃ–¯£ø", 0, "«Î◊¢“‚", 4+32) >> "%tempFile%"
+echo intChoice = objShell.Popup("ÈÖçÁΩÆÊñá‰ª∂‰∏çÂ≠òÂú®,ÁªßÁª≠Â∞Ü‰ºöÂà†Èô§ÊâÄÊúâÈ©±Âä®ÁöÑÊ≥®ÂÜåË°®„ÄÇËØ∑ÈóÆÊòØÂê¶ÁªßÁª≠Ôºü", 0, "ËØ∑Ê≥®ÊÑè", 4+32) >> "%tempFile%"
 echo If intChoice = 6 Then >> "%tempFile%"
 echo     WScript.Echo "Y">> "%tempFile%"
 echo Else>> "%tempFile%"
